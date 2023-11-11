@@ -1,4 +1,5 @@
 package calculadora.operacoes;
+import java.lang.Math;
 
 /*
 Classe que realiza operações matemáticas básicas.
@@ -30,6 +31,12 @@ public class Operacoes {
                     throw new ArithmeticException("Divisão por 0 não é permitido.");
                 }
                 resultado = numero1 / numero2;
+                break;
+            case 'p':
+                resultado = Math.pow(numero1, numero2);
+                break;
+            case 'r':
+                resultado = Math.sqrt(numero1);
                 break;
             default:
                 throw new IllegalArgumentException("Operador inválido: " + operador);

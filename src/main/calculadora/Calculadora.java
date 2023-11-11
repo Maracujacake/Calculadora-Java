@@ -26,16 +26,22 @@ public class Calculadora {
                 double numero1 = leitura.nextDouble();
 
                 // Solicita que o usuário insira o operador.
-                System.out.println("Digite o operador (+, -, *, /): ");
+                System.out.println("Digite o operador (+, -, *, /, p, r): ");
+                System.out.println("O operador p representa potenciação enquanto r representa radiciação");
                 char operador = leitura.next().charAt(0);
+                double numero2 = 0;
+                if(operador != 'r'){ // caso escolhido radiciação, aceita apenas 1 número
 
-                // Solicita que o usuário insira o segundo número.
-                System.out.println("Digite o segundo número: ");
-                while (!leitura.hasNextDouble()) {
-                    System.out.println("Entrada inválida. Digite um número");
-                    leitura.next(); // Limpa a entrada inválida.
+                    // Solicita que o usuário insira o segundo número.
+                    System.out.println("Digite o segundo número: ");
+                    while (!leitura.hasNextDouble()) {
+                        System.out.println("Entrada inválida. Digite um número");
+                        leitura.next(); // Limpa a entrada inválida.
+                    }
+                    
+                     numero2 = leitura.nextDouble();
+                    
                 }
-                double numero2 = leitura.nextDouble();
 
                 // Cria um objeto Numeros para armazenar os números digitados pelo usuário.
                 numeros = new Numeros(numero1, numero2);
